@@ -1,0 +1,20 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "node 学习代码笔记",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuaishou/xingnode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuaishou/xingnode/issues"
+  },
+  "homepage": "https://github.com/kuaishou/xingnode#readme"
+}

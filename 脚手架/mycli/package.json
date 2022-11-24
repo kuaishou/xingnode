@@ -1,0 +1,17 @@
+{
+  "name": "mycli",
+  "version": "1.0.0",
+  "description": "npm int//初始化项目\r npm link//挂载到全局的命令工具中",
+  "main": "index.js",
+  "bin": {
+    "mycli": "bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^9.4.1"
+  }
+}
