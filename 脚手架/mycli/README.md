@@ -11,14 +11,16 @@
 ] -->
 获取到参数  console.log('命令参数',process.argv[2])
 
-给mycli --help输出一些提示
-  使用commander工具包解决该问题 npm install commander
+一、给mycli --help输出一些提示
+使用commander工具包解决该问题 npm install commander
 
   const {program} =require('commander')
 program.option('-f --framwork <framwork>','设置框架')//添加功能提示
 program.parse(process.argv)//commander添加命令行参数处理
 
 
+二、命令行问答工具inquirer
+要下载npm install --save inquirer@^8.0.0版本才可以使用require
 
 执行命令自动创建一个项目
 
