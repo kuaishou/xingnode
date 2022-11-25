@@ -25,3 +25,18 @@ program.parse(process.argv)//commander添加命令行参数处理
 执行命令自动创建一个项目
 
 
+大功告成了；第一步直接
+npm link
+mycli create xingexpress
+选择要创建的框架express或者其他
+然后就会下载框架啦
+成功之后提示成功和接下来的操作cd 项目  ；npm install ........
+
+
+
+
+
+
+
+
+
