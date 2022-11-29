@@ -3,6 +3,7 @@ node_modules
 /dist
 /jiaoshoujia/node_modules/*
 /04express/node_modules/*
+/05MongoDB/node_modules/*
 CHANGELOG.md
 .history
 ipconfig.js
