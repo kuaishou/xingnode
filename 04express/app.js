@@ -56,6 +56,41 @@ app.post('/', async (req, res) => {
     }
 })
 
+app.put('/:id', async (req, res) => {//id占位符传参数
+    //req.params.id可以获取到参数
+    try {
+        let usersinfo = await db.getDB()
+        let userid = req.params.id - 0
+        const putuser = usersinfo.users.find((item) => {
+            return item.id === userid
+        })
+
+        if (!putuser) {
+            res.status(403).json({
+                error: "修改的用户不纯在"
+            })
+        }
+
+        const body = req.body
+        putuser.username = body.username ? body.username : putuser.username
+        putuser.age = body.age ? body.age : putuser.age
+        usersinfo.users[userid - 1] = putuser
+
+        if (!await db.setDB(usersinfo)) {
+            res.status(201).send({ msg: '修改成功' })
+        } else {
+            res.status(500).json({
+                error: '修改失败'
+            })
+        }
+
+    } catch (error) {
+        res.status(500).json({
+            error: '修改失败ddd'
+        })
+    }
+})
+
 app.listen(8888, () => {
     console.log('http://127.0.0.1:8888')
 })
