@@ -1,7 +1,7 @@
 const express = require('express')
 const routeruser = express.Router()
 const userController=require('../controller/userController')
-routeruser.get('/user',userController.list)
+routeruser.post('/register',userController.register)
 .get('/delete',userController.delet)
 
 
