@@ -11,7 +11,8 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        require: true
+        require: true,
+        select:false//不再返回结果中返回密码
     },
     phone: {
         type: String,

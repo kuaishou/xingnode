@@ -1,8 +1,13 @@
 const express = require('express')
 const routeruser = express.Router()
-const userController=require('../controller/userController')
-routeruser.post('/register',userController.register)
-.get('/delete',userController.delet)
+const userController = require('../controller/userController')
+
+const validator = require('../middlevare/validator/userValidator')
+
+
+routeruser.post('/registers', validator.register, userController.register)
+    .post('/logins', validator.login, userController.login)
+    .get('/deletes', userController.delet)
 
 
 
