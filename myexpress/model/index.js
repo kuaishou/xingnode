@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 const userSchema = require('./userModel')
+const { mongopath } = require('../config/config.default')
 //数据库链接
 
 async function main() {
-    mongoose.connect('mongodb://127.0.0.1:27017/rexpress-video')
+    mongoose.connect(mongopath)
 }
 main().then(res => {
     console.log('数据库链接成功')

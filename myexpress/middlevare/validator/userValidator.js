@@ -22,10 +22,15 @@ module.exports.register = validate([//用户注册
             return Promise.reject('手机号码已经被注册，请换新手机号注册')
         }
     }),
-    body('password').notEmpty().withMessage('密码不能为空')
+    body('password').notEmpty().withMessage('密码不能为空').bail()
 ])
 
 module.exports.login = validate([//登录验证
-    body('email').notEmpty().withMessage('邮箱不能为空').bail().isEmail().withMessage('请输入正确的邮箱').bail(),
+    body('email').notEmpty().withMessage('邮箱不能为空').bail().isEmail().withMessage('请输入正确的邮箱').custom(async val => {
+        const emailValidate = await User.findOne({ email: val })
+        if (!emailValidate) {
+            return Promise.reject('邮箱未注册')
+        }
+    }).bail(),
     body('password').notEmpty().withMessage('密码不能为空').bail()
 ])

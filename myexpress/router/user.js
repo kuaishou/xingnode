@@ -4,10 +4,11 @@ const userController = require('../controller/userController')
 
 const validator = require('../middlevare/validator/userValidator')
 
+const {verifyToken}=require('../util/jwt')//token鉴权
 
 routeruser.post('/registers', validator.register, userController.register)
     .post('/logins', validator.login, userController.login)
-    .get('/deletes', userController.delet)
+    .get('/lists',verifyToken, userController.list)
 
 
 
