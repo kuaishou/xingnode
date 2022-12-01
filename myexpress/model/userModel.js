@@ -9,11 +9,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    phone: {
+    password: {
         type: String,
         require: true
     },
-    password: {
+    phone: {
         type: String,
         require: true
     },
@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: null
     },
-    creatAt: {
+    createAt: {
         type: Date,
         default: Date.now()
     },
@@ -32,4 +32,4 @@ const userSchema = new mongoose.Schema({
 
 })
 
-exports.default = userSchema
+module.exports = userSchema

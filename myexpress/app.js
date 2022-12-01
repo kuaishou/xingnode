@@ -4,7 +4,7 @@ const morgan = require('morgan')
 const router = require('./router/index')
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3008
 
 //内置中间件-数据解析
 app.use(express.json())//解析客户端发了json数据
