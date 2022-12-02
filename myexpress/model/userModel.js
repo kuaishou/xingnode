@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const baseModel = require('./baseModel')
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         require: true,
-        select:false//查询不再返回结果中返回密码
+        select: false //查询不再返回结果中返回密码
     },
     phone: {
         type: String,
@@ -22,14 +22,15 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: null
     },
-    createAt: {
-        type: Date,
-        default: Date.now()
+    cover:{
+        type:String,
+        default:null
     },
-    updateAt: {
-        type: Date,
-        default: Date.now()
+    channeldes:{
+        type:String,
+        default:null
     },
+    ...baseModel
 
 })
 

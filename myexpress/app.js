@@ -10,6 +10,8 @@ const PORT = process.env.PORT || 3008
 app.use(express.json())//解析客户端发了json数据
 app.use(express.urlencoded())//解析客户端发了数据
 
+app.use(express.static('public'))//静态资源转发到public文件夹里面
+
 //跨域中间件 yarn add cors
 app.use(cors())
 
