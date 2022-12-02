@@ -4,6 +4,7 @@ node_modules
 /jiaoshoujia/node_modules/*
 /04express/node_modules/*
 /myexpress/node_modules/*
+/11koa/node_modules/*
 /node_modules/*
 CHANGELOG.md
 .history
