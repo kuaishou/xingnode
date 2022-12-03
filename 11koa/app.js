@@ -1,9 +1,18 @@
 const koa = require('koa');
 // const router = require('@koa/router');
 // const routers = new router();
-const routers=require('./router/index')
+const routers = require('./router/index')
+const { koaBody } = require('koa-body');
 const app = new koa();
 
+app.use(koaBody())
+
+
+app.on('error',(err,ctx)=>{
+    console.log(err)
+    ctx.body=err
+
+})
 
 // 一、下面执行洋葱模型结果
 // one-1
